@@ -1,7 +1,5 @@
 package com.clarke.server;
 
-import com.clarke.server.filters.CustomGlobalFilter;
-import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -24,8 +22,8 @@ public class ApiConfig {
                         .path("/currency-conversion-new/**")
                 .filters(f -> f
                         .rewritePath(
-                                "/currency-conversion-new", 
-                                "/currency-conversion-feign"))                        
+                            "/currency-conversion-new", 
+                            "/currency-conversion-feign"))                        
                         .uri("lb://currency-conversion"))                 
                 .route(p -> p
                         .path("/currency-conversion-feign/**")
