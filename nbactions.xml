@@ -52,4 +52,14 @@
                 <exec.appArgs></exec.appArgs>
             </properties>
         </action>
+        <action>
+            <actionName>build</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>spring-boot:build-image</goal>
+                <goal>-DskipTests</goal>
+            </goals>
+        </action>
     </actions>
